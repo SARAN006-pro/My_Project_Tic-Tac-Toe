@@ -1,4 +1,19 @@
 # My_Project_Tic-Tac-Toe
+
+Project Title:
+Tic Tac Toe Game
+Language Used:
+Python
+Objective:
+To implement a simple two-player Tic Tac Toe game using Python, which handles user inputs, displays the board after each move, detects the winner or draw, and offers a restart option.
+Project Features:
+- 3x3 Tic Tac Toe board
+- Two-player input (X and O)
+- Turn-based play
+- Checks for win (rows, columns, diagonals)
+- Checks for draw
+- Handles invalid input and occupied cells
+- Option to restart the game
 # Python Code (tic_tac_toe.py):
 
 board = [[" " for _ in range(3)] for _ in range(3)]
