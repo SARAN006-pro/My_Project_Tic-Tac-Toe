@@ -1,109 +1,86 @@
 Tic Tac Toe Game (Python Project)
 Project Overview
 
-This project is a simple command-line based Tic Tac Toe game developed in Python, designed for two players. The game follows traditional Tic Tac Toe rules, offering a clear interface, turn-based play, and automatic detection of win or draw conditions. The program also includes basic input validation and allows restarting the game.
+This project is a two-player Tic Tac Toe game developed using Python, designed to run in a command-line interface. It allows two players to take turns marking positions on a 3×3 board, while the game automatically checks for a winner or a draw and ensures valid gameplay.
 
 Objective
 
-To implement a user-friendly two-player Tic Tac Toe game that:
+The main objective of this project is to simulate the classic Tic Tac Toe game with:
 
-Accepts valid player moves
+Clear board representation
 
-Displays the updated board after each turn
+Turn-by-turn player interaction
 
-Detects winning conditions and draw states
+Automatic winner/draw detection
 
-Ensures smooth and interactive gameplay experience
+Key Features
 
-Features
-Feature	Description
-3x3 Board Display	The board is printed clearly after each move.
-Two-Player Mode	Players take turns using symbols X and O.
-Win Detection	Automatically checks rows, columns, and diagonals.
-Draw Detection	Declares a draw when the board is full.
-Input Validation	Handles invalid coordinates and occupied cells.
-Simple and Interactive	Easy to run and understand.
+3×3 Game Board displayed clearly after every move
+
+Two-Player Mode using symbols X and O
+
+Win Detection System checking:
+
+Rows
+
+Columns
+
+Both diagonals
+
+Draw Detection when no spaces remain
+
+Input Validation to avoid invalid or already-used positions
+
+Interactive Gameplay with continuous prompts
+
 How the Game Works
 
-The game starts with Player X.
+The game begins with Player X.
 
-Each player inputs a move in the form:
+Players enter their move in the format:
 row,column (Example: 2,3)
 
-The board updates after every move.
+After each move, the game board displays updated state.
 
-The game checks:
+The program checks if:
 
-If the player has won
+A player has won, or
 
-Or if the game ends in a draw
+The board is full, resulting in a draw.
 
-The game ends and announces the result.
+Once the game ends, the final result is announced.
 
-Program Structure
-Function	Purpose
-print_board()	Displays the current Tic Tac Toe board.
-check_win(player)	Checks if the given player has a winning pattern.
-check_draw()	Determines if the game is a draw.
-play_game()	Controls the main game loop and player turns.
-Source Code
-board = [[" " for _ in range(3)] for _ in range(3)]
+Program Flow
+Component	Description
+Board Display	Shows the current state of the game grid.
+Player Input Handling	Accepts and validates player move.
+Win Checker	Determines if a player has achieved a winning combination.
+Draw Checker	Determines if no moves remain and no winner exists.
+Game Loop	Repeats turns until a win or draw occurs.
+Technologies Used
 
-def print_board():
-    for row in board:
-        print("|".join(row))
-        print("-" * 5)
+Programming Language: Python
 
-def check_win(player):
-    for i in range(3):
-        if all([board[i][j] == player for j in range(3)]) or any([board[j][i] == player for j in range(3)]):
-            return True
-    if all([board[i][i] == player for i in range(3)]) or all([board[i][2-i] == player for i in range(3)]):
-        return True
-    return False
+Environment: Any Python-supported console (VS Code, PyCharm, Terminal, IDLE, etc.)
 
-def check_draw():
-    return all(" " not in row for row in board)
+How to Run
 
-def play_game():
-    player = "X"
-    while True:
-        print_board()
-        try:
-            move = input(f"Player {player}, enter row and column (1-3): ")
-            row, col = map(int, move.split(","))
-            row -= 1
-            col -= 1
+Ensure Python 3 is installed.
 
-            if row not in range(3) or col not in range(3):
-                print("Invalid input! Use numbers 1 to 3.")
-                continue
+Save the script as tic_tac_toe.py
 
-            if board[row][col] != " ":
-                print("Position already taken!")
-                continue
+Run the game using:
 
-            board[row][col] = player
+python tic_tac_toe.py
 
-            if check_win(player):
-                print_board()
-                print(f"Player {player} wins!")
-                break
+Screenshots
 
-            if check_draw():
-                print_board()
-                print("It's a draw!")
-                break
+(Add screenshots in this section)
 
-            player = "O" if player == "X" else "X"
-        except:
-            print("Invalid format! Use row,col like 1,2")
+Example Format:
 
-play_game()
-
-Start of Game
+Game Start		
 <img width="327" height="161" alt="image" src="https://github.com/user-attachments/assets/88760313-6f2c-4d68-b88c-4d6f0fa93d44" />
-
 Player Move	Result Screen
 <img width="343" height="126" alt="image" src="https://github.com/user-attachments/assets/4591d14a-7ba5-4057-942e-2844b3eff27f" />
 
@@ -112,6 +89,22 @@ Final Result
 <img width="343" height="151" alt="image" src="https://github.com/user-attachments/assets/a06cd66a-5ddb-4341-9699-195a3397c8bc" />
     If Game tie
 <img width="340" height="146" alt="image" src="https://github.com/user-attachments/assets/bbfb5a98-7257-4753-b4f3-a0f307ca5090" />
+
+
+Conclusion
+
+This project demonstrates:
+
+Logical thinking
+
+Control flow with loops and conditionals
+
+User input validation
+
+Game development fundamentals
+
+It serves as a strong beginner-level Python project useful for learning, mini-project submissions, and resume portfolio building.
+Start of Game
 
 
 Requirements
